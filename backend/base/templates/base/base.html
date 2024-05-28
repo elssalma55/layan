@@ -1,0 +1,145 @@
+{% load static %} 
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>EVENT PLATFORM ORGANISATION</title>
+  </head>
+  
+  <body>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark justify-content-center" style="background-color: #343a40;">
+      <a class="navbar-brand" href="#">
+          <img src="https://i.pinimg.com/564x/61/fc/ac/61fcacd0f8684b906b8b26d487db6b88.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+          <b><em class="text-white">Prestigious Events</em></b>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link btn btn-dark  text-white font-weight-bold type="button"" href="/"><em>Home</em> <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link btn btn-dark text-white font-weight-bold" href="{% url 'our_events' %}"><em>Our Events</em></a>
+            <a class="nav-item nav-link btn btn-dark text-white font-weight-bold" href="{% url 'reservation' %}"><em>Book reservation</em></a>
+           
+           
+            <a class="nav-item nav-link btn btn-dark text-white font-weight-bold type="button"" href="{% url "contact_us" %}"><em>Contact Us</em></a>
+            {% if user.is_authenticated %} 
+            
+            <a class="btn btn-dark font-weight-bold" type="button" href=" {% url "deconnexion" %}"><em>Log-out</em></a>
+            {% else %} 
+            <a class="btn btn-dark font-weight-bold" type="button" href=" {% url 'registrer' %}"><em>Sign-up</em></a>
+            <a class="btn btn-dark font-weight-bold" type="button" href=" {% url "connexion" %}"><em>Log-in</em></a>
+            
+            
+
+
+           
+             {% endif %} 
+             
+              
+          </div>
+      </div>
+  </nav>
+  
+  <div class ="container mt-5 mb-5">
+    <br>
+    <h3 class =" text-center mb-3"><em>"Turn your dreams into unforgettable events with Prestigious Events Agency. Let us bring your most precious moments to life!"</em></h3>
+    {% block content %} 
+    <div class="container">
+     <div class="row">
+         <div class="col-lg-4 mb-4">
+             <div class="card shadow" style="width: 18rem;">
+                 <img src="https://i.pinimg.com/564x/ca/95/02/ca950282ef4f46b20376918b8ca8f5fe.jpg" class="card-img-top" alt="Wedding">
+                 <div class="card-body">
+                     <h5 class="card-title">Wedding</h5>
+                     <p class="card-text"><em>Plan the wedding of your dreams with our expert event planners.</em></p>
+                     <a href="{% url 'mariage' %}" class="btn btn-dark">Go discover</a>
+                 </div>
+             </div>
+         </div>
+         
+         <div class="col-lg-4 mb-4">
+             <div class="card shadow" style="width: 18rem;">
+                 <img src="https://i.pinimg.com/564x/b5/e4/70/b5e4708e6905e78bb73e0505d46b11bf.jpg" class="card-img-top" alt="Birthday">
+                 <div class="card-body">
+                     <h5 class="card-title">Birthday</h5>
+                     <p class="card-text"><em>Celebrate your special day with a memorable birthday bash.</em></p>
+                     <a href="{% url 'birthday' %}" class="btn btn-dark">Go discover</a>
+                 </div>
+             </div>
+         </div>
+         <div class="col-lg-4 mb-4">
+           <div class="card shadow" style="width: 18rem;">
+               <img src="https://i.pinimg.com/564x/37/d3/05/37d3050ec051b3ef08ad441f50f7028e.jpg" class="card-img-top" alt="Gender Reveal">
+               <div class="card-body">
+                   <h5 class="card-title">Gender Reveal</h5>
+                   <p class="card-text"><em>Exciting moments await as you reveal the gender of your baby .</em></p>
+                   <a href="{% url 'gender_reveal' %}" class="btn btn-dark">Go discover</a>
+               </div>
+           </div>
+       </div>
+       <!-- Ajoutez des descriptions pour d'autres types d'événements ici -->
+       <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card shadow" style="width: 18rem;">
+                    <img src="https://i.pinimg.com/564x/fd/bd/09/fdbd09a3d458a1a5631be708b060794a.jpg" class="card-img-top" alt="Conference">
+                    <div class="card-body">
+                        <h5 class="card-title">Conference</h5>
+                        <p class="card-text"><em>Organize successful conferences with our professional event planning services.</em></p>
+                        <a href="{% url 'conference' %}" class="btn btn-dark">Go discover</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-lg-4 mb-4">
+                <div class="card shadow" style="width: 18rem;">
+                    <img src="https://i.pinimg.com/564x/d8/11/07/d8110784ba43b3b5efe7c42ade760231.jpg" class="card-img-top" alt="Graduation">
+                    <div class="card-body">
+                        <h5 class="card-title">Graduation</h5>
+                        <p class="card-text"><em>Celebrate academic achievements with our expert event planning services for graduations.</em></p>
+                        <a href="{% url 'graduation' %}" class="btn btn-dark">Go discover</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-lg-4 mb-4">
+                <div class="card shadow" style="width: 18rem;">
+                    <img src="https://i.pinimg.com/564x/d1/d0/4d/d1d04dfd9b761e36c1f2db44b6103cba.jpg" class="card-img-top" alt="Baptism">
+                    <div class="card-body">
+                        <h5 class="card-title">Baptism</h5>
+                        <p class="card-text"><em>Celebrate the spiritual milestone of baptism with our thoughtful event planning services.</em></p>
+                        <a href="{% url 'baptism' %}" class="btn btn-dark">Go discover</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+     </div>
+   </div>
+
+     {% endblock %} 
+    </div>
+    <footer class=" bg-dark p-3" style="background-color: #FFC0CB;">
+        <p class="text-center text-white font-weight-bold"><em>All rights reserved, developed by the site administrator</em></p>
+    </footer>
+    <script src={% static "js/app.js" %}></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a1ea93eafa.js" crossorigin="anonymous"></script>
+  </body>
+</html>
